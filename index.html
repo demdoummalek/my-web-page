@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Mirrors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 200px;
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-name {
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    .product-price {
+      color: #9f2c5e;
+    }
+
+    button {
+      margin-top: 10px;
+      background-color: #9f2c5e;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #7c234b;
+    }
+
+    #cart-display {
+      margin: 20px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    a {
+      color: #9f2c5e;
+      text-decoration: none;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🪞 All Mirrors</h2>
+<div id="cart-display"></div>
+<a href="cart.html">View Cart 🛒</a>
+
+<div class="grid">
+
+  <!-- Salon Mirrors -->
+  <div class="product"><img src="poo.jpg"><div class="product-name">Salon Mirror 1</div><div class="product-price">7900 DA</div><button onclick="addToCart('Salon Mirror 1', 7900)">Add to Cart</button></div>
+  <div class="product"><img src="mn.jpg"><div class="product-name">Salon Mirror 2</div><div class="product-price">5000 DA</div><button onclick="addToCart('Salon Mirror 2', 5000)">Add to Cart</button></div>
+  <div class="product"><img src="rc.jpg"><div class="product-name">Salon Mirror 3</div><div class="product-price">15000 DA</div><button onclick="addToCart('Salon Mirror 3', 15000)">Add to Cart</button></div>
+  <div class="product"><img src="se.jpg"><div class="product-name">Salon Mirror 4</div><div class="product-price">8900 DA</div><button onclick="addToCart('Salon Mirror 4', 8900)">Add to Cart</button></div>
+  <div class="product"><img src="lm.jpg"><div class="product-name">Salon Mirror 5</div><div class="product-price">5500 DA</div><button onclick="addToCart('Salon Mirror 5', 5500)">Add to Cart</button></div>
+
+  <!-- Wall Mirrors -->
+  <div class="product"><img src="fifi.jpg"><div class="product-name">Wall Mirror 1</div><div class="product-price">15000 DA</div><button onclick="addToCart('Wall Mirror 1', 15000)">Add to Cart</button></div>
+  <div class="product"><img src="tl.jpg"><div class="product-name">Wall Mirror 2</div><div class="product-price">13500 DA</div><button onclick="addToCart('Wall Mirror 2', 13500)">Add to Cart</button></div>
+  <div class="product"><img src="miral1.webp"><div class="product-name">Wall Mirror 3</div><div class="product-price">9500 DA</div><button onclick="addToCart('Wall Mirror 3', 9500)">Add to Cart</button></div>
+  <div class="product"><img src="kh.jpeg"><div class="product-name">Wall Mirror 4</div><div class="product-price">11000 DA</div><button onclick="addToCart('Wall Mirror 4', 11000)">Add to Cart</button></div>
+  <div class="product"><img src="ado.jpg"><div class="product-name">Wall Mirror 5</div><div class="product-price">10000 DA</div><button onclick="addToCart('Wall Mirror 5', 10000)">Add to Cart</button></div>
+
+  <!-- Bedroom Mirrors -->
+  <div class="product"><img src="images (1).jpg"><div class="product-name">Bedroom Mirror 1</div><div class="product-price">8000 DA</div><button onclick="addToCart('Bedroom Mirror 1', 8000)">Add to Cart</button></div>
+  <div class="product"><img src="A6.webp"><div class="product-name">Bedroom Mirror 2</div><div class="product-price">10000 DA</div><button onclick="addToCart('Bedroom Mirror 2', 10000)">Add to Cart</button></div>
+  <div class="product"><img src="HA.webp"><div class="product-name">Bedroom Mirror 3</div><div class="product-price">9500 DA</div><button onclick="addToCart('Bedroom Mirror 3', 9500)">Add to Cart</button></div>
+  <div class="product"><img src="30.jpg"><div class="product-name">Bedroom Mirror 4</div><div class="product-price">19000 DA</div><button onclick="addToCart('Bedroom Mirror 4', 19000)">Add to Cart</button></div>
+  <div class="product"><img src="char.jpg"><div class="product-name">Bedroom Mirror 5</div><div class="product-price">1500 DA</div><button onclick="addToCart('Bedroom Mirror 5', 1500)">Add to Cart</button></div>
+
+  <!-- Bathroom Mirrors -->
+  <div class="product"><img src="aya.jpg"><div class="product-name">Bathroom Mirror 1</div><div class="product-price">15000 DA</div><button onclick="addToCart('Bathroom Mirror 1', 15000)">Add to Cart</button></div>
+  <div class="product"><img src="oo.jpg"><div class="product-name">Bathroom Mirror 2</div><div class="product-price">25000 DA</div><button onclick="addToCart('Bathroom Mirror 2', 25000)">Add to Cart</button></div>
+  <div class="product"><img src="miral.jpg"><div class="product-name">Bathroom Mirror 3</div><div class="product-price">9900 DA</div><button onclick="addToCart('Bathroom Mirror 3', 9900)">Add to Cart</button></div>
+  <div class="product"><img src="tele.jpg"><div class="product-name">Bathroom Mirror 4</div><div class="product-price">30000 DA</div><button onclick="addToCart('Bathroom Mirror 4', 30000)">Add to Cart</button></div>
+  <div class="product"><img src="amir.jpg"><div class="product-name">Bathroom Mirror 5</div><div class="product-price">10000 DA</div><button onclick="addToCart('Bathroom Mirror 5', 10000)">Add to Cart</button></div>
+
+</div>
+
+<script>
+  function loadCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cart-display").innerText = `🛒 Items in Cart: ${cart.length}`;
+  }
+
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ name, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+    alert(`${name} added to cart.`);
+  }
+
+  window.onload = loadCart;
+</script>
+
+</body>
+</html>

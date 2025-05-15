@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Commande Produit</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #94898e, #c07f9d); 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td {
+      padding: 15px;
+      font-size: 18px;
+      vertical-align: middle;
+    }
+
+    td[colspan="2"] {
+      text-align: center;
+    }
+
+    img {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 4px solid #ccc;
+      transition: transform 0.6s ease;
+    }
+
+    img:hover {
+      transform: scale(1.6);
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #534e4e;
+      border-radius: 6px;
+      background-color: #f7f4f4;
+    }
+
+    input[readonly] {
+      background-color: #f9f6f6;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="submit"] {
+      background-color: #85154d;
+      color: rgb(250, 250, 250);
+      border: none;
+      padding: 12px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #07080a;
+    }
+  </style>
+</head>
+<body>
+  <form id="orderForm" action="submit_order.php" method="POST">
+    <table>
+      <tr>
+        <td rowspan="6">
+          <img src="malek.1.jpg" alt="Product Image">
+        </td>
+        <td>Seller:</td>
+        <td><input type="text" name="seller" value="mirror's world" readonly></td>
+      </tr>
+      <tr>
+        <td>Price:</td>
+        <td><input type="text" name="price" value="8500" readonly></td>
+      </tr>
+      <tr>
+        <td>Reference:</td>
+        <td><input type="text" name="reference" value="REF123456" readonly></td>
+      </tr>
+      <tr>
+        <td>Color:</td>
+        <td>
+          <label><input type="checkbox" name="color[]" value="yellow">yellow</label>
+          <label><input type="checkbox" name="color[]" value="white">white</label>
+          <label><input type="checkbox" name="color[]" value="bleu">bleu</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Quantity:</td>
+        <td>
+          <select name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="submit" value="Place Order">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <!-- ✅ JavaScript -->
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+      const colors = document.querySelectorAll('input[name="color[]"]:checked');
+      if (colors.length === 0) {
+        alert("Please select at least one color.");
+        event.preventDefault(); // Cancel submission
+        return;
+      }
+
+      const seller = document.querySelector('input[name="seller"]').value;
+      const price = document.querySelector('input[name="price"]').value;
+      const reference = document.querySelector('input[name="reference"]').value;
+      const quantity = document.querySelector('select[name="quantity"]').value;
+      const selectedColors = Array.from(colors).map(cb => cb.value).join(", ");
+
+      const confirmMsg = `
+Confirm your order:
+-----------------------
+Seller: ${seller}
+Price: ${price}
+Reference: ${reference}
+Colors: ${selectedColors}
+Quantity: ${quantity}
+      `.trim();
+
+      if (!confirm(confirmMsg)) {
+        event.preventDefault(); // Cancel submission if user clicks Cancel
+      }
+    });
+  </script>
+</body>
+</html>
